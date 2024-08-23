@@ -1,0 +1,126 @@
+.offer-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white; 
+  background-image: url('../../images//others/bg.png'); 
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 30px;
+}
+
+.offer-banner p {
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+
+.filter-container {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end; 
+  margin-top: 20px;
+}
+
+.filter-dropdown label {
+  margin-right: 10px;
+}
+
+.filter-dropdown select {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filter-dropdown {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+#product1 {
+  text-align: center;
+  color: #fbe4f8;
+}
+
+#product1 .pro-container{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin: 20px;
+  flex-wrap: wrap;
+}
+
+#product1 .pro{
+  width: 23%;
+  height: auto;
+  min-width: 250px;
+  padding: 20px 20px;
+  border: 1px solid black;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 20px 20px 30px rgba(255, 254, 254, 0.3);
+  margin: 20px 1px;
+  transition: 0.2s ease;
+  background-color: 10px 10px 54px rgba(255, 255, 254, 0.1);
+  backdrop-filter: blur(5px);
+  position: relative;
+}
+
+#product1 .pro:hover{
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+#product1 .pro img {
+  width: 100%;
+  height: 60%;
+}
+
+#product1 .pro .des{
+  text-align: start;
+  padding: 10px 0;
+}
+
+#product1 .pro .des span{
+  color: antiquewhite;
+  font-size: 12px;
+}
+
+#product1 .pro .des h5{
+  padding-top: 7px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+#product1 .pro .des i{
+  font-size: 15px;
+  color: rgba(243, 181, 25);
+}
+
+#product1 .pro .des h4{
+  padding-top: 7px;
+  font-size: 15px;
+  font-weight: 700;
+  color: whitesmoke;
+}
+
+#product1 .pro a {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  background-color: rgb(24, 24, 24);
+  font-weight: 500;
+  color: rgb(255, 255, 255); 
+  border: 1px solid whitesmoke;
+  transition: 0.3s ease; 
+}
+
+#product1 .pro a:hover {
+  background-color: rgb(0, 0, 0); 
+  color: white;
+}

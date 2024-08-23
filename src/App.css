@@ -1,0 +1,11 @@
+.whatsapp {
+    position: fixed; /* Use fixed positioning */
+    bottom: 150px; /* Adjust the distance from the bottom */
+    right: 100px; /* Adjust the distance from the right */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+  }
+  
+  .whatsapp img {
+    width: 150px; /* Adjust the size of the logo */
+    height: auto; /* Maintain aspect ratio */
+  }
