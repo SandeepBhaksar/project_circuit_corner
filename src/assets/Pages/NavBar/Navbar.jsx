@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './Navbar.css';  // Adjust CSS class naming convention if necessary
 import logo from '../../images/others/cc_logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
+import { faBagShopping, faUser } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,6 +38,7 @@ const Navbar = () => {
                         <FontAwesomeIcon icon={faBagShopping} />
                     </NavLink>
                 </li>
+                <li><NavLink className="nav-link cart-icon" activeClassName="active-link" to="/login" onClick={closeMenu}><FontAwesomeIcon icon={faUser} /></NavLink></li>
             </ul>
         </div>
     );
