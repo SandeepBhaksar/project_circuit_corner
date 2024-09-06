@@ -38,6 +38,11 @@ const Navbar = () => {
                         <FontAwesomeIcon icon={faBagShopping} />
                     </NavLink>
                 </li>
+                <li>
+                    <NavLink className="nav-link cart-icon" activeClassName="active-link" to="/login" onClick={closeMenu}>
+                        <FontAwesomeIcon icon={faUser} />
+                    </NavLink>
+                </li>
             </ul>
         </div>
     );
