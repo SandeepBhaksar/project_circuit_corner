@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './assets/Pages/NavBar/Navbar';
 import Home from './assets/Pages/Home/Home';
 import Shop from './assets/Pages/Shop/Shop';
@@ -10,27 +10,11 @@ import Cart from './assets/Pages/Cart/Cart';
 import whatsapp_logo from './assets/images/Components/Accessories/whatsapp_logo.png';
 import './App.css';
 
-// Redirect function to handle old path
-const RedirectToRoot = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.pathname === '/project_circuit_corner/') {
-      window.location.replace('/');
-    }
-  }, [location]);
-
-  return null;
-};
-
 const App = () => {
   return (
     <Router>
       <div>
-        <RedirectToRoot />
-
         <Navbar />
-        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
@@ -39,7 +23,6 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
-
         {/* WhatsApp Logo */}
         <div className="whatsapp">
           <a href="https://wa.me/+917204774695" target="_blank" rel="noopener noreferrer">
