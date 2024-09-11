@@ -6,7 +6,7 @@
 
 body {
   color: white;
-  background-image: url('../src/assets/images/Components/background_image.png');
+  background-image: url('./assets/Components/background_image.png');
   background-size: cover; 
   background-repeat: no-repeat;
   background-attachment: fixed; 
