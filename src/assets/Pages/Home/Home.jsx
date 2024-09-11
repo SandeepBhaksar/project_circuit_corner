@@ -12,7 +12,6 @@ import order_online from '../../images/others/order online.png';
 import promotion from '../../images/others/Promotion.png';
 import exchange_offer from '../../images/others/Exchange Offer.png';
 import support from '../../images/others/Support.png';
-import background_image from '../../images/Components/background_image.png';
 import hp_victus_01 from '../../images/Components/HP Victus/hp_victus_01.png';
 import hp_victus_02 from '../../images/Components/HP Victus 2/hp_victus_02.png';
 import hp_pavillion from '../../images/Components/HP Pavillion/hp_pavillion.png';
