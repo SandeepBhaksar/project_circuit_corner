@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './assets/Pages/NavBar/Navbar';
 import Home from './assets/Pages/Home/Home';
 import Shop from './assets/Pages/Shop/Shop';
@@ -26,9 +26,8 @@ const App = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-
         </Routes>
-        {/* WhatsApp Logo */}
+
         <div className="whatsapp">
           <a href="https://wa.me/+917204774695" target="_blank" rel="noopener noreferrer">
             <img src={whatsapp_logo} alt="WhatsApp" />
