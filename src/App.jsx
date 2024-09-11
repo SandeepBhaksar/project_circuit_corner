@@ -7,7 +7,6 @@ import Blogs from './assets/Pages/Blogs/Blogs';
 import About from './assets/Pages/About/About';
 import Contact from './assets/Pages/Contact/Contact';
 import Cart from './assets/Pages/Cart/Cart';
-import Login from './assets/Pages/Login/Login';
 import whatsapp_logo from './assets/images/Components/Accessories/whatsapp_logo.png';
 import './App.css';
 
@@ -23,7 +22,6 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<Login />} />
         </Routes>
 
         <div className="whatsapp">
