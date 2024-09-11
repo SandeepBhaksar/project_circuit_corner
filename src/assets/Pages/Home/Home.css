@@ -7,7 +7,7 @@ html, body {
   .container {
     position: relative;
     height: 100vh; 
-    overflow: auto; 
+    overflow: -moz-hidden-unscrollable; 
   }
   
   .background-image {

@@ -1,10 +1,11 @@
+/* Offer Banner */
 .offer-banner {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white; 
-  background-image: url('../../images//others/bg.png'); 
+  color: white;
+  background-image: url('../../images/others/bg.png'); /* Fixed double slashes */
   background-size: cover;
   background-attachment: fixed;
   padding: 30px;
@@ -15,11 +16,11 @@
   padding-bottom: 15px;
 }
 
-
+/* Filter Container */
 .filter-container {
   display: flex;
   width: 100%;
-  justify-content: flex-end; 
+  justify-content: flex-end;
   margin-top: 20px;
 }
 
@@ -38,67 +39,69 @@
   margin-right: 20px;
 }
 
+/* Product Container */
 #product1 {
   text-align: center;
   color: #fbe4f8;
 }
 
-#product1 .pro-container{
+#product1 .pro-container {
   display: flex;
-  justify-content: space-between;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  margin: 20px;
   flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 100%; /* Full width to use available space */
 }
 
-#product1 .pro{
-  width: 23%;
+/* Base product styles */
+#product1 .pro {
+  width: calc(20% - 20px); /* Default for 5 items per row, adjusted to fit available space */
   height: auto;
-  min-width: 250px;
-  padding: 20px 20px;
+  min-width: 200px; /* Adjusted min-width for responsiveness */
+  padding: 15px;
   border: 1px solid black;
   border-radius: 15px;
   cursor: pointer;
-  box-shadow: 20px 20px 30px rgba(255, 254, 254, 0.3);
-  margin: 20px 1px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 10px; /* Adjusted margin */
   transition: 0.2s ease;
-  background-color: 10px 10px 54px rgba(255, 255, 254, 0.1);
+  background-color: rgba(10, 10, 54, 0.1);
   backdrop-filter: blur(5px);
   position: relative;
 }
 
-#product1 .pro:hover{
-  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+#product1 .pro:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 #product1 .pro img {
   width: 100%;
-  height: 60%;
+  height: auto; /* Maintain aspect ratio */
 }
 
-#product1 .pro .des{
+#product1 .pro .des {
   text-align: start;
   padding: 10px 0;
 }
 
-#product1 .pro .des span{
+#product1 .pro .des span {
   color: antiquewhite;
   font-size: 12px;
 }
 
-#product1 .pro .des h5{
+#product1 .pro .des h5 {
   padding-top: 7px;
   color: #ffffff;
   font-size: 14px;
 }
 
-#product1 .pro .des i{
+#product1 .pro .des i {
   font-size: 15px;
   color: rgba(243, 181, 25);
 }
 
-#product1 .pro .des h4{
+#product1 .pro .des h4 {
   padding-top: 7px;
   font-size: 15px;
   font-weight: 700;
@@ -115,12 +118,27 @@
   border-radius: 50px;
   background-color: rgb(24, 24, 24);
   font-weight: 500;
-  color: rgb(255, 255, 255); 
+  color: rgb(255, 255, 255);
   border: 1px solid whitesmoke;
-  transition: 0.3s ease; 
+  transition: 0.3s ease;
 }
 
 #product1 .pro a:hover {
-  background-color: rgb(0, 0, 0); 
+  background-color: rgb(0, 0, 0);
   color: white;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  /* For tablets or medium-sized screens (4 items per row) */
+  #product1 .pro {
+    width: calc(25% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  /* For mobile devices (2 items per row) */
+  #product1 .pro {
+    width: calc(45% - 30px);
+  }
 }

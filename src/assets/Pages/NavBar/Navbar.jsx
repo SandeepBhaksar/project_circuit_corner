@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import './Navbar.css';  // Adjust CSS class naming convention if necessary
+import './Navbar.css';
 import logo from '../../images/others/cc_logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping, faUser } from '@fortawesome/free-solid-svg-icons';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
+    const [showDropdown, setShowDropdown] = useState(false);
+
+    const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -14,6 +19,18 @@ const Navbar = () => {
 
     const closeMenu = () => {
         setIsMenuOpen(false);
+    };
+
+    const handleHover = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
+    const toggleDropdown = () => {
+        setShowDropdown(!showDropdown);
     };
 
     return (
@@ -39,11 +56,34 @@ const Navbar = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className="nav-link cart-icon" activeClassName="active-link" to="/login" onClick={closeMenu}>
+                    <button
+                        className="login-button"
+                        onClick={() => isAuthenticated ? toggleDropdown() : loginWithRedirect()}
+                        onMouseEnter={handleHover}
+                        onMouseLeave={handleMouseLeave}
+                    >
                         <FontAwesomeIcon icon={faUser} />
-                    </NavLink>
+                        {isHovered && (
+                            <div className="login-tooltip">
+                                {isAuthenticated ? (
+                                    <span>Logged in as: {user.email}</span>
+                                ) : (
+                                    <span>Not logged in</span>
+                                )}
+                            </div>
+                        )}
+                    </button>
+                    {isAuthenticated && showDropdown && (
+                        <div className="dropdown-menu">
+                            <button
+                                className="logout-button"
+                                onClick={() => logout({ returnTo: window.location.origin })}
+                            >
+                                Logout
+                            </button>
+                        </div>
+                    )}
                 </li>
-
             </ul>
         </div>
     );
