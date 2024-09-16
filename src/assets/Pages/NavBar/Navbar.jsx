@@ -3,15 +3,11 @@ import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../../images/others/cc_logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBagShopping, faUser } from '@fortawesome/free-solid-svg-icons';
-import { useAuth0 } from "@auth0/auth0-react";
+import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
+import UserDropdown from '../Login/Login/UserDropdown';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isHovered, setIsHovered] = useState(false);
-    const [showDropdown, setShowDropdown] = useState(false);
-
-    const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -21,22 +17,13 @@ const Navbar = () => {
         setIsMenuOpen(false);
     };
 
-    const handleHover = () => {
-        setIsHovered(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsHovered(false);
-    };
-
-    const toggleDropdown = () => {
-        setShowDropdown(!showDropdown);
-    };
+    const getClassName = ({ isActive }) =>
+        `nav-link ${isActive ? 'active-link' : ''}`;
 
     return (
         <div className='navbar'>
             <div className='navbar-left'>
-                <NavLink exact to="/" className='nav-link'>
+                <NavLink to="/" className='nav-link'>
                     <img src={logo} alt="Company Logo" className='navbar-logo' />
                 </NavLink>
             </div>
@@ -45,44 +32,18 @@ const Navbar = () => {
             </button>
             <ul id='navbar' className={`navbar-right ${isMenuOpen ? 'show' : ''}`}>
                 <button id='close' className={`navbar-close ${isMenuOpen ? 'visible' : ''}`} onClick={closeMenu}>X</button>
-                <li><NavLink exact className="nav-link" activeClassName="active-link" to="/" onClick={closeMenu}>Home</NavLink></li>
-                <li><NavLink className="nav-link" activeClassName="active-link" to="/shop" onClick={closeMenu}>Shop</NavLink></li>
-                <li><NavLink className="nav-link" activeClassName="active-link" to="/blogs" onClick={closeMenu}>Blogs</NavLink></li>
-                <li><NavLink className="nav-link" activeClassName="active-link" to="/about" onClick={closeMenu}>About</NavLink></li>
-                <li><NavLink className="nav-link" activeClassName="active-link" to="/contact" onClick={closeMenu}>Contact</NavLink></li>
+                <li><NavLink to="/" className={getClassName} onClick={closeMenu}>Home</NavLink></li>
+                <li><NavLink to="/shop" className={getClassName} onClick={closeMenu}>Shop</NavLink></li>
+                <li><NavLink to="/blogs" className={getClassName} onClick={closeMenu}>Blogs</NavLink></li>
+                <li><NavLink to="/about" className={getClassName} onClick={closeMenu}>About</NavLink></li>
+                <li><NavLink to="/contact" className={getClassName} onClick={closeMenu}>Contact</NavLink></li>
                 <li>
-                    <NavLink className="nav-link cart-icon" activeClassName="active-link" to="/cart" onClick={closeMenu}>
+                    <NavLink to="/cart" className={getClassName} onClick={closeMenu}>
                         <FontAwesomeIcon icon={faBagShopping} />
                     </NavLink>
                 </li>
                 <li>
-                    <button
-                        className="login-button"
-                        onClick={() => isAuthenticated ? toggleDropdown() : loginWithRedirect()}
-                        onMouseEnter={handleHover}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        <FontAwesomeIcon icon={faUser} />
-                        {isHovered && (
-                            <div className="login-tooltip">
-                                {isAuthenticated ? (
-                                    <span>Logged in as: {user.email}</span>
-                                ) : (
-                                    <span>Not logged in</span>
-                                )}
-                            </div>
-                        )}
-                    </button>
-                    {isAuthenticated && showDropdown && (
-                        <div className="dropdown-menu">
-                            <button
-                                className="logout-button"
-                                onClick={() => logout({ returnTo: window.location.origin })}
-                            >
-                                Logout
-                            </button>
-                        </div>
-                    )}
+                    <UserDropdown />
                 </li>
             </ul>
         </div>

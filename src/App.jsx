@@ -7,8 +7,12 @@ import Blogs from './assets/Pages/Blogs/Blogs';
 import About from './assets/Pages/About/About';
 import Contact from './assets/Pages/Contact/Contact';
 import Cart from './assets/Pages/Cart/Cart';
+import Login from './assets/Pages/Login/Login/Login';
+import Signup from './assets/Pages/Login/Signup/Signup';
 import whatsapp_logo from './assets/images/Components/Accessories/whatsapp_logo.png';
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
   return (
@@ -22,6 +26,9 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+
         </Routes>
 
         <div className="whatsapp">
@@ -29,6 +36,7 @@ const App = () => {
             <img src={whatsapp_logo} alt="WhatsApp" />
           </a>
         </div>
+        <ToastContainer/>
       </div>
     </Router>
   );

@@ -50,7 +50,7 @@ html, body {
     border-radius: 8px; 
   }
   
-  .welcome-note h4,  h2, h1, p, button {
+  .welcome-note h4, h3, h2, h1, p, button {
     margin: 10px 0; 
   }
   
@@ -64,6 +64,9 @@ html, body {
     border-radius: 6px; 
   }
   
+  .welcome-note h3{
+    color: wheat;
+  }
   .welcome-note button:hover {
     background-color: #ff4500; 
     transform: translateZ(+1);

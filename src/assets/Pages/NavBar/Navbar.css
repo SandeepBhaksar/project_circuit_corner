@@ -14,7 +14,7 @@
   align-items: center;
   font-size: 20px;
   position: relative;
-  z-index: 1000; /* Ensure the navbar is on top */
+  z-index: 1000;
 }
 
 .navbar-left {
@@ -65,62 +65,6 @@
   transition: transform 0.3s ease;
 }
 
-.login-button {
-  background-color: transparent;
-  border: none;
-  color: white;
-  cursor: pointer;
-  margin-left: 20px;
-  transition: transform 0.3s ease;
-  font-size: inherit;
-  margin-top: 0.2px;
-  transform: scale(0.9);
-}
-
-.login-tooltip {
-  display: none;
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #333;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 14px;
-  white-space: nowrap;
-  z-index: 1000;
-}
-
-.login-button:hover .login-tooltip {
-  display: block;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 25px; /* Adjust based on the button */
-  right: 0;
-  background-color: #333;
-  color: white;
-  border-radius: 5px;
-  padding: 2px;
-  z-index: 1000;
-}
-
-.dropdown-menu .logout-button {
-  background-color: transparent;
-  border: none;
-  color: white;
-  cursor: pointer;
-  padding: 1px;
-  text-align: left;
-  width: 100%;
-}
-
-.dropdown-menu .logout-button:hover {
-  background-color: #555;
-}
-
 .navbar-toggler {
   display: none;
   font-size: 24px;
@@ -140,56 +84,56 @@
   border: none;
   color: white;
   cursor: pointer;
-  display: none; /* Hide by default */
+  display: none;
 }
 
 .navbar-close.visible {
-  display: block; /* Show when visible class is added */
+  display: block;
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
   .navbar {
-      flex-direction: row;
-      align-items: center;
-      padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
   }
 
   .navbar-logo {
-      width: 150px;
-      margin-left: 0;
+    width: 150px;
+    margin-left: 0;
   }
 
   .navbar-right {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-right: 0;
-      display: none;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      position: absolute;
-      top: 50px;
-      left: 0;
-      z-index: 999;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 0;
+    display: none;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 999;
   }
 
   .navbar-right.show {
-      display: flex;
+    display: flex;
   }
 
   .navbar-right li {
-      margin: 10px 0;
-      width: 100%;
-      text-align: center;
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
   }
 
   .navbar-toggler {
-      display: block;
+    display: block;
   }
 
   @media (max-width: 480px) {
     .navbar-close {
-        display: block; /* Always show close button for smaller screens */
+      display: block; 
     }
-}
+  }
 }
