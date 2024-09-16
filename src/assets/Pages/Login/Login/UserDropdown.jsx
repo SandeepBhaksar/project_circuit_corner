@@ -38,6 +38,7 @@ const UserDropdown = () => {
             <li>Profile</li>
             <li>Settings</li>
             <li>Logout</li>
+            <li>Login</li>
           </ul>
         </div>
       )}
