@@ -35,10 +35,12 @@ const UserDropdown = () => {
       {dropdownOpen && (
         <div className="dropdown-content">
           <ul>
-            <li>Profile</li>
-            <li>Settings</li>
-            <li>Logout</li>
-            <li>Login</li>
+            <li>My Account</li>
+            <li>Wishlist</li>
+            <li>Check Order/Initiate Return</li>
+            <li>Language</li>
+            <li><button>LOGIN</button></li>
+            <li><button>REGISTER HERE</button></li>
           </ul>
         </div>
       )}
