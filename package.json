@@ -1,9 +1,9 @@
 {
+  "homepage": "https://SandeepBhaskar.github.io/ciruit_corner/",
   "name": "project_circuit_corner",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://sandeepbhaksar.github.io/project_circuit_corner/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
