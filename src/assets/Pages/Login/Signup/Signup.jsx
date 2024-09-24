@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom"; // Import NavLink and useNavigate
-import { toast } from "react-toastify";
 
 const Signup = () => {
     const [email, setEmail] = useState("");
@@ -10,25 +9,26 @@ const Signup = () => {
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
-    const handleSignup = async (e) => {
+    const handleSignup = (e) => {
         e.preventDefault();
+
+        // Simulate a successful signup without backend logic
         try {
-            await createUserWithEmailAndPassword(auth, email, password);
-            const user = auth.currentUser;
-            console.log(user);
-            if (user) {
-                await setDoc(doc(db, "User", user.uid), {
-                    email: email,
-                    firstName: fname,
-                    lastName: lname,
-                });
+            // For now, we simply check that all fields are filled in
+            if (!email || !password || !fname || !lname) {
+                throw new Error("Please fill in all fields.");
             }
+
+            // Simulate a successful registration
             console.log("User Registered Successfully!!!");
+            alert("User Registered Successfully!!!");
+
+            // Navigate to login after a successful signup
             navigate("/login");
-            toast.success("User Registered Successfully!!!", { position: "top-center" });
         } catch (error) {
+            // Handle error by showing it in an alert or state
             setError(error.message);
-            toast.error(error.message, { position: "bottom-center" });
+            alert(error.message);
         }
     };
 
