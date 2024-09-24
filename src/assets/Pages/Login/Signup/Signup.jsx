@@ -1,8 +1,5 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom"; // Import NavLink and useNavigate
-import { auth, db } from "../firebase";
-import { setDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
 
 const Signup = () => {

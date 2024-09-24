@@ -11,8 +11,6 @@ import Login from './assets/Pages/Login/Login/Login';
 import Signup from './assets/Pages/Login/Signup/Signup';
 import whatsapp_logo from './assets/images/Components/Accessories/whatsapp_logo.png';
 import './App.css';
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
 
 const App = () => {
   return (
@@ -36,7 +34,6 @@ const App = () => {
             <img src={whatsapp_logo} alt="WhatsApp" />
           </a>
         </div>
-        <ToastContainer/>
       </div>
     </Router>
   );
